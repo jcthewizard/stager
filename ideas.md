@@ -1,0 +1,6 @@
+- a way to add folders (properties) and organize
+- styles in the same proprty should be consistent
+- maybe change view in full to edit?
+- When clicking HDR enhancement, it makes it wrap lines. Let's fix that. 
+- what is custom
+- why is enhancement type not multi select

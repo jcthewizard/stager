@@ -1,0 +1,285 @@
+/* ============================================================
+   Usage Page — Consistent with Workspace Design System
+   ============================================================ */
+
+/* --- Main Content Area --- */
+.usageMain {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* --- Top Bar --- */
+.topBar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: 0 var(--space-5);
+    border-bottom: 1px solid var(--color-border);
+    background: white;
+    flex-shrink: 0;
+    height: 57px;
+}
+
+.topBarTitle {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--color-text);
+}
+
+.topBarActions {
+    margin-left: auto;
+    display: flex;
+    gap: var(--space-2);
+}
+
+.topBarBtn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: white;
+    color: var(--color-text-secondary);
+}
+
+/* --- Scrollable Content --- */
+.usageContent {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-5);
+    background: var(--color-bg);
+}
+
+/* --- Summary Cards Grid --- */
+.summaryGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+}
+
+.summaryCard {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+}
+
+.summaryCard:hover {
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-md);
+}
+
+.summaryLabel {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--space-2);
+}
+
+.summaryValue {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--color-text);
+    line-height: 1.2;
+    margin-bottom: var(--space-1);
+}
+
+.summarySubtext {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+}
+
+/* --- Section Header --- */
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.sectionTitle {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    color: var(--color-text);
+}
+
+.sectionCount {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    color: var(--color-text-tertiary);
+    background: var(--color-bg-alt);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-border);
+}
+
+/* --- Transaction Table --- */
+.transactionTable {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.tableHeader {
+    display: grid;
+    grid-template-columns: 140px 1fr 100px 180px;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-bg-alt);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.tableHeaderCell {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-tertiary);
+}
+
+.tableRow {
+    display: grid;
+    grid-template-columns: 140px 1fr 100px 180px;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color 0.1s ease;
+}
+
+.tableRow:last-child {
+    border-bottom: none;
+}
+
+.tableRow:hover {
+    background: var(--color-bg);
+}
+
+.tableCell {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.tableCellDesc {
+    color: var(--color-text-secondary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tableCellDate {
+    color: var(--color-text-tertiary);
+    font-size: 0.75rem;
+}
+
+.txIcon {
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.amountPositive {
+    color: var(--color-success);
+    font-weight: 600;
+}
+
+.amountNegative {
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+/* --- Empty State --- */
+.emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-8);
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+.emptyIcon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+    opacity: 0.3;
+}
+
+.emptyTitle {
+    font-family: var(--font-serif);
+    font-size: 1.375rem;
+    color: var(--color-text);
+    margin-bottom: var(--space-2);
+}
+
+.emptyDesc {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    max-width: 360px;
+    line-height: var(--leading-relaxed);
+}
+
+/* --- Loading --- */
+.loading {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-8);
+}
+
+.spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--color-border);
+    border-top-color: var(--color-accent);
+    border-radius: 50%;
+    animation: usageSpin 0.8s linear infinite;
+}
+
+@keyframes usageSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+    .summaryGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .summaryGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .tableHeader,
+    .tableRow {
+        grid-template-columns: 120px 1fr 80px;
+    }
+
+    .tableHeaderCell:last-child,
+    .tableCellDate {
+        display: none;
+    }
+}

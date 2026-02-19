@@ -1,0 +1,179 @@
+/* ===================================================
+   Auth Pages — Shared Styles (login / signup)
+   =================================================== */
+
+.authPage {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-6);
+    background: var(--color-bg);
+}
+
+.authCard {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-lg);
+}
+
+.authLogo {
+    text-align: center;
+    margin-bottom: var(--space-2);
+}
+
+.authLogo a {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--color-text);
+    text-decoration: none;
+    display: inline-flex;
+}
+
+.authLogoImg {
+    height: 36px;
+    width: auto;
+    mix-blend-mode: multiply;
+}
+
+.authTitle {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: var(--space-1);
+    color: var(--color-text);
+}
+
+.authSubtitle {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-bottom: var(--space-6);
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.formGroup label {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-text);
+    letter-spacing: 0.01em;
+}
+
+.formGroup input {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg);
+    color: var(--color-text);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+.formGroup input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(194, 97, 39, 0.12);
+}
+
+.formGroup input::placeholder {
+    color: var(--color-text-tertiary);
+}
+
+.authError {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    color: #c0392b;
+    background: rgba(192, 57, 43, 0.06);
+    border: 1px solid rgba(192, 57, 43, 0.15);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+    text-align: center;
+}
+
+.authSubmit {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    border: none;
+    background: var(--color-text);
+    color: white;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+    margin-top: var(--space-2);
+}
+
+.authSubmit:hover:not(:disabled) {
+    opacity: 0.88;
+}
+
+.authSubmit:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.authSubmit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.authFooter {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-top: var(--space-5);
+}
+
+.authFooter a {
+    color: var(--color-accent);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.authFooter a:hover {
+    text-decoration: underline;
+}
+
+.authDivider {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin: var(--space-2) 0;
+}
+
+.authDivider::before,
+.authDivider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+}
+
+.authDivider span {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
