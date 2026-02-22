@@ -122,6 +122,7 @@ export default function SettingsPage() {
     }, [user, defaultModel, defaultType]);
 
     const handleUpgrade = useCallback(async (planKey: string) => {
+        if (billingLoading) return;
         setBillingLoading(planKey);
         try {
             const res = await fetch('/api/stripe/checkout', {
@@ -295,7 +296,7 @@ export default function SettingsPage() {
                                         <button
                                             className={styles.btnPrimary}
                                             onClick={() => handleUpgrade('starter')}
-                                            disabled={!!billingLoading}
+                                            disabled={billingLoading === 'starter'}
                                         >
                                             {billingLoading === 'starter' ? 'Redirecting...' : 'Upgrade'}
                                         </button>
@@ -307,7 +308,7 @@ export default function SettingsPage() {
                                         <button
                                             className={styles.btnPrimary}
                                             onClick={() => handleUpgrade('pro')}
-                                            disabled={!!billingLoading}
+                                            disabled={billingLoading === 'pro'}
                                         >
                                             {billingLoading === 'pro' ? 'Redirecting...' : 'Upgrade'}
                                         </button>
@@ -319,7 +320,7 @@ export default function SettingsPage() {
                                         <button
                                             className={styles.btnPrimary}
                                             onClick={() => handleUpgrade('agency')}
-                                            disabled={!!billingLoading}
+                                            disabled={billingLoading === 'agency'}
                                         >
                                             {billingLoading === 'agency' ? 'Redirecting...' : 'Upgrade'}
                                         </button>
