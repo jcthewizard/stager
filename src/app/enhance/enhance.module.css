@@ -467,10 +467,11 @@
     background: white;
     cursor: pointer;
     font-family: var(--font-sans);
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     color: var(--color-text);
     transition: all 0.15s ease;
     text-align: left;
+    white-space: nowrap;
 }
 
 .enhancementBtn:hover {

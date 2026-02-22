@@ -9,14 +9,19 @@
   left: 0;
   right: 0;
   z-index: 100;
-  padding: var(--space-4) var(--space-6);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background: rgba(250, 249, 245, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
+}
+
+.navInner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-6);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
 }
 
 .navBrand {
@@ -42,6 +47,7 @@
 .navLinks {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-8);
   list-style: none;
 }
@@ -59,6 +65,7 @@
 .navActions {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: var(--space-3);
 }
 

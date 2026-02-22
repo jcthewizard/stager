@@ -245,9 +245,13 @@ export default function GalleryPage() {
                                                 )}
                                                 <button
                                                     className={styles.cardActionBtn}
-                                                    onClick={() => enhancedUrl && setLightboxUrl(enhancedUrl)}
+                                                    onClick={() => {
+                                                        const params = new URLSearchParams();
+                                                        if (enhancedUrl) params.set('image', enhancedUrl);
+                                                        router.push(`/enhance?${params.toString()}`);
+                                                    }}
                                                 >
-                                                    🔍 View Full
+                                                    ✏️ Edit
                                                 </button>
                                             </div>
                                         </div>

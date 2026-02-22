@@ -43,15 +43,15 @@ function BeforeAfterDemo() {
       >
         {/* After image (full width, behind) */}
         <img
-          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80"
-          alt="Enhanced listing — vibrant, warm lighting"
+          src="/stager-virtual_staging-c76b2195.png"
+          alt="Virtually staged living room"
           className={styles.demoAfter}
           draggable={false}
         />
         {/* Before image (clipped) */}
         <img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
-          alt="Original listing — flat lighting, dull colors"
+          src="/empty-room-filler.jpg"
+          alt="Empty room before staging"
           className={styles.demoBefore}
           style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
           draggable={false}
@@ -75,18 +75,20 @@ export default function Home() {
     <>
       {/* Navigation */}
       <nav className={styles.nav}>
-        <div className={styles.navBrand}>
-          <img src="/stager-logo.png" alt="Stager" className={styles.navLogoImg} />
-        </div>
-        <ul className={styles.navLinks}>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#models">Models</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-        </ul>
-        <div className={styles.navActions}>
-          <a href="/login" className="btn btn-ghost">Log in</a>
-          <a href="/signup" className="btn btn-primary">Get Started Free</a>
+        <div className={styles.navInner}>
+          <div className={styles.navBrand}>
+            <img src="/stager-logo.png" alt="Stager" className={styles.navLogoImg} />
+          </div>
+          <ul className={styles.navLinks}>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#models">Models</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+          <div className={styles.navActions}>
+            <a href="/login" className="btn btn-ghost">Log in</a>
+            <a href="/signup" className="btn btn-primary">Get Started Free</a>
+          </div>
         </div>
       </nav>
 

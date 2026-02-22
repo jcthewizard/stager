@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useRef, useCallback, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useRef, useCallback, useEffect, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/components/auth-provider';
 import { AI_MODELS, DEFAULT_MODEL } from '@/lib/models';
 import { ENHANCEMENT_TYPES, buildPrompt, buildVaryPrompt } from '@/lib/enhancement-types';
@@ -250,8 +250,23 @@ function CompareSlider({
 // ============================================================
 // Main: Enhance Page
 // ============================================================
-export default function EnhancePage() {
+export default function EnhancePageWrapper() {
+    return (
+        <Suspense fallback={
+            <div className={styles.workspace}>
+                <div className={styles.processingOverlay}>
+                    <div className={styles.spinner} />
+                </div>
+            </div>
+        }>
+            <EnhancePage />
+        </Suspense>
+    );
+}
+
+function EnhancePage() {
     const router = useRouter();
+    const searchParams = useSearchParams();
     const { user, isLoading, isAuthenticated, signOut, refreshUser } = useAuth();
 
     // State
@@ -274,6 +289,27 @@ export default function EnhancePage() {
             router.push('/login');
         }
     }, [isLoading, isAuthenticated, router]);
+
+    // Load image from URL query param (e.g. from gallery "Edit" button)
+    useEffect(() => {
+        const imageUrl = searchParams.get('image');
+        if (!imageUrl || uploadedImage) return;
+
+        (async () => {
+            try {
+                const res = await fetch(imageUrl);
+                const blob = await res.blob();
+                const ext = blob.type.split('/')[1] || 'jpg';
+                const file = new File([blob], `edit-source.${ext}`, { type: blob.type });
+                const localUrl = URL.createObjectURL(blob);
+                setUploadedImage(localUrl);
+                setUploadedFileName(file.name);
+                setUploadedFile(file);
+            } catch (err) {
+                console.error('Failed to load image from URL:', err);
+            }
+        })();
+    }, [searchParams, uploadedImage]);
 
     const handleEnhance = useCallback(async () => {
         if (!uploadedFile || !user) return;
